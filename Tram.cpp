@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
-int main()
-{
+int main(){
     long num;
     int remain=0;
     int out,in;
