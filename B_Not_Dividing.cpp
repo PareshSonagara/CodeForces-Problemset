@@ -45,10 +45,13 @@ void solve() {
     cin>>n;
     vll vec(n);
     inarr(vec,n);
-    fl(i,n-1){
+    fl(i,n){
         if(vec[i]==1){
             vec[i]++;
         }
+    }
+    fl(i,n-1){
+        
         if(vec[i+1]%vec[i]==0){
           vec[i+1]++;  
         }
