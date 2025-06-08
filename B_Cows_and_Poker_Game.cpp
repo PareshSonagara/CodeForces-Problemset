@@ -42,6 +42,7 @@ void solve() {
     string str;
     cin>>str;
     for(auto i : str){
+        
         if(i=='I'){
             tem++;
         }

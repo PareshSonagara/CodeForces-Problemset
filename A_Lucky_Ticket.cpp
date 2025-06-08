@@ -51,7 +51,8 @@ void solve() {
             ans+=num[i];
         }
         else{
-            ans-=num[i];
+            ans-=num[i
+            ];
         }
     }
     if(ans==0){

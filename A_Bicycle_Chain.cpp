@@ -49,7 +49,8 @@ void solve() {
     ll maxi=0;
 	f(i,n){
         f(j,m){
-            if(vecB[j]%vecA[i]==0&&vecB[j]/vecA[i]>=maxi){
+            if(vecB[j]%vecA[i]==0&&vecB[j]/vecA[i]>=
+                maxi){
                 maxi=vecB[j]/vecA[i];
                 ans[maxi]+=1;
             }

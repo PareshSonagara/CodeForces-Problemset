@@ -50,6 +50,7 @@ void solve() {
         }
         else if(tem1==str2){
             str2=tem2;
+            
         }
         cout<<str1<<" "<<str2<<endl;
     }
