@@ -37,27 +37,23 @@ typedef priority_queue<ll> llpq;
 #define pf push_front
 
 void solve() {
-    ll n,k,b,s;
-    cin >> n >> k >> b >> s;
-    ll minS= k * b;
-    ll maxS =minS+ n*(k-1);
-    if(s < minS || s > maxS) {
-        cout << -1 << endl;
-        return;
+    ll n,k;
+    cin >> n >> k;
+    string s;
+    cin >> s;
+    llv ans(n+1,0);
+    fc(i,1,n+1){
+        if(s[i-1] == 'W') {
+            ans[i] = ans[i-1] + 1;
+        } else {
+            ans[i] = ans[i-1];
+        }
     }
-    llv ans(n,0);
-    ans[0]=minS;
-    s -= minS;
-    f(i,n){
-        ll add =min(s,k-1);
-        ans[i]+=add;
-        s-=add;
-        if(s == 0) break;
+    ll result=k;
+    fc(i,k,n+1){
+        result = min(result, ans[i] - ans[i-k]);
     }
-    f(i,n){
-        cout << ans[i] << " ";
-    }
-    cout<< endl;
+    cout << result << endl;
 
 }
 

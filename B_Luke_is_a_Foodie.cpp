@@ -29,7 +29,6 @@ typedef priority_queue<ll> llpq;
 #define rall(v) v.rbegin(), v.rend()
 #define f(i, n) for(ll i = 0; i < n; i++)
 #define fc(i, x, n) for(ll i = x; i < n; i++)
-#define r return;
 #define fs first
 #define sc second
 #define pb push_back
@@ -37,28 +36,22 @@ typedef priority_queue<ll> llpq;
 #define pf push_front
 
 void solve() {
-    ll n,k,b,s;
-    cin >> n >> k >> b >> s;
-    ll minS= k * b;
-    ll maxS =minS+ n*(k-1);
-    if(s < minS || s > maxS) {
-        cout << -1 << endl;
-        return;
+    ll n,x;
+    cin >> n >> x;
+    llv vec(n);
+    invec(vec, n);
+    ll ans = 0;
+    ll l=vec[0]-x, r=vec[0]+x;
+    f(i,n) {
+        l=max(l,vec[i]-x);
+        r=min(r,vec[i]+x);
+        if(l > r) {
+            ans++;
+            l = vec[i] - x;
+            r = vec[i] + x;
+        }   
     }
-    llv ans(n,0);
-    ans[0]=minS;
-    s -= minS;
-    f(i,n){
-        ll add =min(s,k-1);
-        ans[i]+=add;
-        s-=add;
-        if(s == 0) break;
-    }
-    f(i,n){
-        cout << ans[i] << " ";
-    }
-    cout<< endl;
-
+    cout<<ans << endl;
 }
 
 int main() {
